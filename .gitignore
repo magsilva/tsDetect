@@ -27,3 +27,8 @@ Output_TestSmellDetection*
 target/
 TestSmellDetector.iml
 files-smell.csv
+
+# Eclipse
+.classpath
+.project
+.settings/
