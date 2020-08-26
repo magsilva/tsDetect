@@ -7,9 +7,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TestFile {
-    private String app, testFilePath, productionFilePath;
+    private String app;
+    private String testFilePath;
+    private String productionFilePath;
     private List<AbstractSmell> testSmells;
 
+    public void clearSmells() {
+    	testSmells = new ArrayList<>();
+    }
+    
     public String getApp() {
         return app;
     }
@@ -49,7 +55,7 @@ public class TestFile {
     public String getTagName(){
         return "N.I.Y";
     }
-
+   
     public String getTestFileName(){
         int lastIndex = testFilePath.lastIndexOf(File.separator);
         return testFilePath.substring(lastIndex+1);

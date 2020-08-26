@@ -5,6 +5,21 @@ import com.github.javaparser.ast.body.MethodDeclaration;
 
 public class Util {
 
+	 /**
+      * Edited by Niamh Duffy - Student 40178269 @ Queen's University Belfast
+      * To include Ignored tests when detecting for smells, we must include them in every test smell detection algorithm.
+      */
+	public static boolean isTestMethod(MethodDeclaration n) {
+		boolean valid = false;
+		if (n.getAnnotationByName("Test").isPresent() || n.getNameAsString().toLowerCase().startsWith("test")) {
+			//	must be a public method
+			if (n.getModifiers().contains(Modifier.PUBLIC)) {
+				valid = true;
+			}
+		}
+		return valid;
+	}
+	
     public static boolean isValidTestMethod(MethodDeclaration n) {
         boolean valid = false;
 
